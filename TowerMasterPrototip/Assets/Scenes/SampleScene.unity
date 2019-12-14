@@ -312,8 +312,12 @@ MonoBehaviour:
   Projectile: {fileID: 9080436207810076412, guid: 31d63a4376bda3f41ae823879dd7b4b0,
     type: 3}
   Thrower: {fileID: 270479519}
-  Spos: 0
-  Epos: 0
+  acc: 0
+  side: 0
+  SposY: 0
+  EposY: 0
+  SposX: 0
+  EposX: 0
 --- !u!1 &153142956
 GameObject:
   m_ObjectHideFlags: 0
