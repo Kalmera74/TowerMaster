@@ -57,21 +57,13 @@ public class FloatingShoot : MonoBehaviour
 
         if (intDist > 0 && !CreatedList.ContainsKey(intDist) && CreatedList.Count < Slice - 1) {
             TopDist = intDist;
-            Debug.Log(oneSlice * intDist);
-            Debug.Log(intDist);
-            Debug.Log(oneSlice);
-            var vector = BasePointer.transform.position - new Vector3(oneSlice * dist, 0, 0);
-            vector.y = Pointer.transform.position.y;
-            vector.z = -(BasePointer.transform.position - Pointer.transform.position).z;
-            var clone = Instantiate(Pointer, vector, Pointer.transform.rotation, transform);
+            var clone = Instantiate(Pointer, transform);
             CreatedList.Add(intDist, clone);
         }
         else {
             foreach(KeyValuePair<int, GameObject> obj in CreatedList) {
-                var vector = BasePointer.transform.position - new Vector3(oneSlice * obj.Key, 0, 0);
-                vector.y = Pointer.transform.position.y;
-                vector.z = -(BasePointer.transform.position - Pointer.transform.position).z;
-                obj.Value.transform.position = vector;
+                Debug.Log("Key : " + obj.Key.ToString() + " ->" + (oneSlice * obj.Key).ToString());
+                obj.Value.transform.position = Vector3.Lerp(BasePointer.transform.position, Pointer.transform.position, oneSlice * obj.Key);
             }
         }
 
