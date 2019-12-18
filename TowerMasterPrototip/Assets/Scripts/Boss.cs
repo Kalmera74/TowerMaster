@@ -5,12 +5,18 @@ using UnityEngine;
 public class Boss : Enemy
 {
 
-    public override void Move()
+    protected override void Move()
     {
-        transform.position += new Vector3(_moveSpeed * Time.deltaTime, 0, 0);
+        base.Move();
     }
     private void changeColor()
     {
 
+    }
+
+    protected override void Die()
+    {
+        base.Die();
+        GameManager.Next = true;
     }
 }

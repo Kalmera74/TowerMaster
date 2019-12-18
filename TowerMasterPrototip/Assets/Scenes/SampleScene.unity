@@ -9776,7 +9776,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1858423178}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0.5818708, y: 0.45968568, z: -0.24207383}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -9784,7 +9784,7 @@ Transform:
   - {fileID: 133006824}
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1001 &1880355042
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11071,6 +11071,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0da0aebc75eefe4391e34a838d28a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _won: 0
+  _lost: 0
+  _waveGenerator: {fileID: 2134064309}
+  _currentLevel: 1
+  _maxLevel: 4
 --- !u!4 &2134064308
 Transform:
   m_ObjectHideFlags: 0
@@ -11097,13 +11102,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad5aec512888f448911d49a91a86aa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _waveFrequency: 0
-  _spawnRate: 0
-  _waveTime: 0
-  _currentWave: 0
+  _waveFrequency: 5
+  _spawnRate: 1.7
   _waves:
   - {fileID: 11400000, guid: b871d5a21b5548a4abef8bfc7ddc1261, type: 2}
-  test: {fileID: 7392133891037686190, guid: 773df04aa18ad5848a0af5dbaa426a9e, type: 3}
+  - {fileID: 11400000, guid: b871d5a21b5548a4abef8bfc7ddc1261, type: 2}
+  - {fileID: 11400000, guid: b871d5a21b5548a4abef8bfc7ddc1261, type: 2}
+  - {fileID: 11400000, guid: b871d5a21b5548a4abef8bfc7ddc1261, type: 2}
   _player: {fileID: 133006826}
 --- !u!114 &2134064310
 MonoBehaviour:

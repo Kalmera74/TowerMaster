@@ -18,9 +18,10 @@ public class Enemy : MonoBehaviour
     protected ParticleSystem _deathEffect;
 
 
-    void Awake()
+    private void Start()
     {
-        Skin = _skin;
+        Skin = GameManager.GetRandomEnemyColor(0,3);
+       // transform.LookAt(GameManager.Player.transform.forward);
     }
 
     private void Update()
@@ -28,12 +29,19 @@ public class Enemy : MonoBehaviour
         Move();
     }
 
-    public virtual void Move()
+    protected virtual void Move()
     {
-        transform.position += new Vector3(_moveSpeed*Time.deltaTime, 0, 0);
+
+        transform.Translate(Vector3.forward * _moveSpeed * Time.deltaTime);
     }
-    
-    private void Die()
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(transform.position, transform.forward*3);
+    }
+
+    protected virtual void Die()
     {
         GameManager.Player.AddGold(_gold);
         // Partical Effect

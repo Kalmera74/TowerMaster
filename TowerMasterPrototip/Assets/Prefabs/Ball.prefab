@@ -121,10 +121,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0166581deb3b2b4bb62c50bc6f49300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blastRadius: 1
+  _blastRadius: 5
   _color: {r: 0, g: 0, b: 0, a: 0}
   _damage: 5
-  _skin: {fileID: 2100000, guid: b0708f0b0cd09cd4d91746f04b8190e0, type: 2}
+  _skin: {fileID: 2100000, guid: 45d533e4e41a9ae468691767d607ab26, type: 2}
   _enemyMask:
     serializedVersion: 2
     m_Bits: 1024

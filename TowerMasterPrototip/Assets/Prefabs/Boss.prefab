@@ -105,8 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 542e0c92272983d43aa1ad4812e8a440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 20
-  _moveSpeed: 0
+  _health: 5
+  _moveSpeed: 1
   _color: {r: 0.3803922, g: 0.3803922, b: 0.3803922, a: 0}
   _gold: 100
   _skin: {fileID: 2100002, guid: 85c1a10249a173f4695d31c65c9e591d, type: 3}
