@@ -31,56 +31,69 @@ public class WaveGenerator : MonoBehaviour
         GameObject go = Instantiate(enemy, _player.transform.forward * 30, Quaternion.identity);
         go.transform.LookAt(_player.transform.forward);
         go.transform.Translate(Vector3.forward, _player.transform);
-        go.transform.Translate(Vector3.left * Random.insideUnitSphere.x * 4);
+        go.transform.Translate(Vector3.left * GetRandom(-2,5));
 
     }
-    public void StartSpawn(int w, int r)
+    public void StartSpawn(int w)
     {
-        StartCoroutine(Spawner(w, r));
+        StartCoroutine(Spawner(w));
     }
 
-
-    private IEnumerator Spawner(int wave, int _currentRow)
+    private IEnumerator Spawner(int wave)
     {
-        
-        switch (_currentRow)
+        foreach(Phase P in _waves[wave-1].Phases)
         {
-            case 1:
-                foreach (GameObject w in _waves[wave-1].FirstRow)
-                {
-                    Instantiator(w);
-                    yield return new WaitForSeconds(_spawnRate);
-                }
-                yield return new WaitForSeconds(_waveFrequency);
-                StartCoroutine(Spawner(wave, ++_currentRow));
-                break;
-            case 2:
-                foreach (GameObject w in _waves[wave-1].SecondRow)
-                {
-                    Instantiator(w);
-                    yield return new WaitForSeconds(_spawnRate);
-                }
-                yield return new WaitForSeconds(_waveFrequency);
-                StartCoroutine(Spawner(wave, ++_currentRow));
-                break;
-
-            case 3:
-                foreach (GameObject w in _waves[wave-1].ThirdRow)
-                {
-                    Instantiator(w);
-                    yield return new WaitForSeconds(_spawnRate);
-                }
-                yield return new WaitForSeconds(_waveFrequency);
-                StartCoroutine(Spawner(wave, ++_currentRow));
-                break;
-            case 4:
-                Instantiator(_waves[wave-1].Boss);
-                StopCoroutine("Spawn");
-                break;
-
+            foreach(GameObject go in P.Enemies)
+            {
+                Instantiator(go);
+                yield return new WaitForSeconds(_spawnRate);
+            }
+            yield return new WaitForSeconds(_waveFrequency);
         }
-
-
-
     }
-}
+
+
+        /*  private IEnumerator Spawner(int wave, int _currentRow)
+          {
+
+              switch (_currentRow)
+              {
+                  case 1:
+                      foreach (GameObject w in _waves[wave-1].FirstRow)
+                      {
+                          Instantiator(w);
+                          yield return new WaitForSeconds(_spawnRate);
+                      }
+                      yield return new WaitForSeconds(_waveFrequency);
+                      StartCoroutine(Spawner(wave, ++_currentRow));
+                      break;
+                  case 2:
+                      foreach (GameObject w in _waves[wave-1].SecondRow)
+                      {
+                          Instantiator(w);
+                          yield return new WaitForSeconds(_spawnRate);
+                      }
+                      yield return new WaitForSeconds(_waveFrequency);
+                      StartCoroutine(Spawner(wave, ++_currentRow));
+                      break;
+
+                  case 3:
+                      foreach (GameObject w in _waves[wave-1].ThirdRow)
+                      {
+                          Instantiator(w);
+                          yield return new WaitForSeconds(_spawnRate);
+                      }
+                      yield return new WaitForSeconds(_waveFrequency);
+                      StartCoroutine(Spawner(wave, ++_currentRow));
+                      break;
+                  case 4:
+                      Instantiator(_waves[wave-1].Boss);
+                      StopCoroutine("Spawn");
+                      break;
+
+              }
+
+
+
+          } */
+    }

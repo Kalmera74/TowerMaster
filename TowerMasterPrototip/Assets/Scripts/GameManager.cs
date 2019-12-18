@@ -64,12 +64,13 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Level: " + level);
         TurnPlayer(Player.GetComponent<Transform>());
-        _waveGenerator.StartSpawn(level, 1);
+        _waveGenerator.StartSpawn(level);
     }
     private void TurnPlayer(Transform player)
     {
-        // Animate it, maybe coroutine?
+        // Animate it, maybe coroutine, or animation?
         player.Rotate(0, 90, 0);
+       
     }
     public static Material GetRandomEnemyColor(int min, int max)
     {
