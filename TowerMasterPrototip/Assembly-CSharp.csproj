@@ -53,7 +53,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\ActionPoint.cs" />
      <Compile Include="Assets\Scripts\Shooter.cs" />
+     <None Include="Assets\Materials\Fog.shader" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/muham/Desktop/TowerMaster/TowerMasterPrototip/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>

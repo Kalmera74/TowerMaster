@@ -7,51 +7,55 @@ public class Shooter : MonoBehaviour
     public GameObject Projectile;
     public GameObject Thrower;
 
-
     public Rigidbody ball;
 	public Transform target;
 	public float h = 25;
 	public float gravity = -18;
     public float TargetSens = 4;
+    public LineRenderer LineRender;
     
     GameObject[] PathObjects = new GameObject[10]; 
     LaunchData launchData;
     Vector3 TargetStartPos;
     Vector3 TargetBufferPos;
 
+    // :D
+    Vector3 boomPosition;
+    Transform LastActionPoint;
+
     void Start()
     {
         Physics.gravity = Vector3.up * gravity;
         TargetStartPos = target.transform.localPosition;
         TargetBufferPos = target.transform.localPosition;
-        for (int i = 0; i < PathObjects.Length; i++) {
-            PathObjects[i] = Instantiate(target.gameObject);
-            PathObjects[i].SetActive(false);
-        }
     }
 
     void SetVisible() {
-        for (int i = 0; i < PathObjects.Length; i++) {
-            PathObjects[i].SetActive(false);
-        }
+        LineRender.positionCount = 0;
     }
 
     void Update()
     {
-        target.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);
-        
         if (Input.GetMouseButton(0))
         {
+            LineRender.positionCount = 10;
             Vector3 inputDirection = Vector3.zero * 0.2f;
             inputDirection.x = -Input.GetAxisRaw("Mouse Y") * 0.1f;
             inputDirection.z = Input.GetAxisRaw("Mouse X") * 0.1f;
             target.transform.localPosition = TargetBufferPos + inputDirection * TargetSens;
             TargetBufferPos = target.transform.localPosition;
             DrawPath();
+
+            if (LastActionPoint != null) {
+                Destroy(LastActionPoint.gameObject);
+                LastActionPoint = null;
+            }
         }
         else if (Input.GetMouseButtonUp(0))
         {
             SetVisible();
+            LastActionPoint = Instantiate(target, boomPosition, target.transform.rotation);
+            LastActionPoint.gameObject.AddComponent<ActionPoint>();
             target.transform.position = TargetStartPos;
             TargetBufferPos = TargetStartPos;
             Rigidbody rg = Instantiate(Projectile, Thrower.transform.position, Quaternion.Euler(Camera.main.transform.rotation.eulerAngles)).GetComponent<Rigidbody>();
@@ -78,8 +82,10 @@ public class Shooter : MonoBehaviour
 			float simulationTime = i / (float)resolution * launchData.timeToTarget;
 			Vector3 displacement = launchData.initialVelocity * simulationTime + Vector3.up *gravity * simulationTime * simulationTime / 2f;
 			Vector3 drawPoint = ball.position + displacement;
-            PathObjects[i - 1].transform.position = previousDrawPoint;
-            PathObjects[i - 1].SetActive(true);
+            LineRender.SetPosition(i - 1, drawPoint);
+            if (i == resolution) {
+                boomPosition = drawPoint;
+            }
 			previousDrawPoint = drawPoint;
 		}
 	}
