@@ -8,11 +8,17 @@ public class Shooter : MonoBehaviour
     public GameObject Thrower;
 
     public Rigidbody ball;
-	public Transform target;
+    private Rigidbody rg;
+
+    public Transform target;
 	public float h = 25;
 	public float gravity = -18;
     public float TargetSens = 4;
     public LineRenderer LineRender;
+    public Material[] Elements;
+    private int _currentElement = 0;
+    private int _maxElement;
+
     
     GameObject[] PathObjects = new GameObject[10]; 
     LaunchData launchData;
@@ -23,15 +29,34 @@ public class Shooter : MonoBehaviour
     Vector3 boomPosition;
     Transform LastActionPoint;
 
-    void Start()
+    private void Start()
     {
+        _maxElement = Elements.Length;
         Physics.gravity = Vector3.up * gravity;
         TargetStartPos = target.transform.localPosition;
         TargetBufferPos = target.transform.localPosition;
+       
     }
 
     void SetVisible() {
         LineRender.positionCount = 0;
+    }
+
+    private Material ChangeColor()
+    {
+       // Debug.Log(ball.GetComponent<Bomb>().Skin);
+        if (_currentElement < _maxElement)
+        {
+           // Debug.Log(ball.GetComponent<Bomb>().Skin);
+           return Elements[_currentElement++];
+        }
+        else
+        {
+            _currentElement = 0;
+           return Elements[_currentElement++];
+
+        }
+       
     }
 
     void Update()
@@ -58,7 +83,8 @@ public class Shooter : MonoBehaviour
             LastActionPoint.gameObject.AddComponent<ActionPoint>();
             target.transform.position = TargetStartPos;
             TargetBufferPos = TargetStartPos;
-            Rigidbody rg = Instantiate(Projectile, Thrower.transform.position, Quaternion.Euler(Camera.main.transform.rotation.eulerAngles)).GetComponent<Rigidbody>();
+           rg = Instantiate(Projectile, Thrower.transform.position, Quaternion.Euler(Camera.main.transform.rotation.eulerAngles)).GetComponent<Rigidbody>();
+            rg.GetComponent<Bomb>().Skin = ChangeColor();
             rg.velocity = launchData.initialVelocity;
         }
     }
