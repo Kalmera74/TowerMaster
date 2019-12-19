@@ -33,7 +33,7 @@ public class Shooter : MonoBehaviour
     {
         _maxElement = Elements.Length;
         Physics.gravity = Vector3.up * gravity;
-        TargetStartPos = target.transform.localPosition;
+        TargetStartPos = target.transform.forward + new Vector3(10, -2.8f, 0);
         TargetBufferPos = target.transform.localPosition;
        
     }

@@ -52,7 +52,9 @@ public class GameManager : MonoBehaviour
             else
             {
                 // Won
-                Debug.Log("Won");   
+                _currentLevel = 0;
+                next = false;
+                LoadNextLevel(++_currentLevel); ;  
             }
             
         }
