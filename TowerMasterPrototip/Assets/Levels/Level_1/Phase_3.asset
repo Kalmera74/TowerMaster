@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Phase_3
   m_EditorClassIdentifier: 
   Enemies:
-  - {fileID: 8220975815242815295, guid: 25429697635429143b45217de4d35ef8, type: 3}
-  - {fileID: 8220975815242815295, guid: 25429697635429143b45217de4d35ef8, type: 3}
+  - {fileID: 2619020889069358788, guid: 5601ec4b84fd90240a2b6fab70fbe015, type: 3}
+  - {fileID: 2327547223966496224, guid: 25a115c1d33c07d48be536d3aa24a0f8, type: 3}
+  - {fileID: 2619020889069358788, guid: 5601ec4b84fd90240a2b6fab70fbe015, type: 3}

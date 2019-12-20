@@ -16,12 +16,14 @@ public class Enemy : MonoBehaviour
     protected Material _skin;
     [SerializeField]
     protected ParticleSystem _deathEffect;
+    public SkinnedMeshRenderer renderer;
 
 
     private void Start()
     {
-        Skin = GameManager.GetRandomEnemyColor(0,3);
-       // transform.LookAt(GameManager.Player.transform.forward);
+        // Skin = GameManager.GetRandomEnemyColor(0,4);
+        // transform.LookAt(GameManager.Player.transform.forward);
+        Skin = _skin;
     }
 
     private void Grow()
@@ -82,7 +84,7 @@ public class Enemy : MonoBehaviour
         set
         {
             _skin = value;
-            GetComponent<MeshRenderer>().material = _skin;
+            renderer.material = _skin;
             _color = _skin.color;
         }
     }

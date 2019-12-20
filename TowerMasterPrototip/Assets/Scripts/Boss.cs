@@ -15,7 +15,8 @@ public class Boss : Enemy
     }
     private void Start()
     {
-        StartCoroutine(RandMove(10, 1.5f));
+        StartCoroutine(RandMove(10, 3.5f));
+        Skin = GameManager.GetRandomEnemyColor(0, 4);
     }
     private void Update()
     {
@@ -28,17 +29,20 @@ public class Boss : Enemy
 
         }
     }
-
+    
     // Not perfect 
     private IEnumerator RandMove(int times, float wait)
     {
-        if (times > 0)
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y, (Vector3.left + Random.insideUnitSphere * 3).z);
-            yield return new WaitForSeconds(wait);
-            Debug.Log(times);
-            StartCoroutine(RandMove(times - 1,wait));
-        }
+
+        /* transform.position = new Vector3(transform.position.x, transform.position.y, (Vector3.left + Random.insideUnitSphere * 3).z);
+         yield return new WaitForSeconds(wait);
+         Debug.Log(times);*/
+
+        
+            Skin = GameManager.GetRandomEnemyColor(0, 4);
+        yield return new WaitForSeconds(wait);
+        StartCoroutine(RandMove(0,wait));
+        
     }
     protected override void Die()
     {

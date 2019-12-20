@@ -60,6 +60,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Lava_Flowing_Shader\Scripts\ScrollingUVs_Layers.cs" />
+    <Compile Include="Assets\MobileDepthWater\Scripts\AnimationStarter.cs" />
+    <Compile Include="Assets\MobileDepthWater\Scripts\CameraDepthSlider.cs" />
+    <Compile Include="Assets\MobileDepthWater\Scripts\CameraRotator.cs" />
+    <Compile Include="Assets\MobileDepthWater\Scripts\FPSCounter.cs" />
+    <Compile Include="Assets\MobileDepthWater\Scripts\FPSUI.cs" />
+    <Compile Include="Assets\MobileDepthWater\Scripts\TouchRotator.cs" />
+    <Compile Include="Assets\MobileDepthWater\Scripts\Water\WaterArea.cs" />
+    <Compile Include="Assets\MobileDepthWater\Scripts\Water\WaterMaterialSwitcher.cs" />
+    <Compile Include="Assets\MobileDepthWater\Scripts\Water\WaterPropertyBlockSetter.cs" />
     <Compile Include="Assets\Scripts\ActionPoint.cs" />
     <Compile Include="Assets\Scripts\Bomb.cs" />
     <Compile Include="Assets\Scripts\Boss.cs" />
@@ -72,7 +82,21 @@
     <Compile Include="Assets\Scripts\Shooter.cs" />
     <Compile Include="Assets\Scripts\Shop.cs" />
     <Compile Include="Assets\Scripts\WaveGenerator.cs" />
+    <None Include="Assets\MobileDepthWater\Shaders\WaterTwoSide\Depth\DiffuseDepthWaterTwoSide.shader" />
     <None Include="Assets\Resources\Materials\Fog.shader" />
+    <None Include="Assets\Lava_Flowing_Shader\Shaders\Unlit_Lava_Simple.shader" />
+    <None Include="Assets\MobileDepthWater\Shaders\WaterOpaque\Height\DiffuseColorHeightWater.shader" />
+    <None Include="Assets\MobileDepthWater\Shaders\WaterTwoSide\Height\DiffuseColorHeightWaterTwoSide.shader" />
+    <None Include="Assets\Lava_Flowing_Shader\Shaders\Diffuse_Lava_Distort.shader" />
+    <None Include="Assets\MobileDepthWater\Shaders\WaterOpaque\Depth\DiffuseDepthWater.shader" />
+    <None Include="Assets\MobileDepthWater\Shaders\WaterTwoSide\Height\DiffuseHeightWaterTwoSide.shader" />
+    <None Include="Assets\Lava_Flowing_Shader\Shaders\Unlit_Lava_Distort.shader" />
+    <None Include="Assets\Lava_Flowing_Shader\Shaders\Unlit_Lava_Distort_Transparent.shader" />
+    <None Include="Assets\MobileDepthWater\Shaders\WaterTwoSide\Depth\DiffuseColorDepthWaterTwoSide.shader" />
+    <None Include="Assets\Lava_Flowing_Shader\ReadMe.txt" />
+    <None Include="Assets\MobileDepthWater\Shaders\WaterOpaque\Height\DiffuseHeightWater.shader" />
+    <None Include="Assets\MobileDepthWater\Shaders\WaterOpaque\Depth\DiffuseColorDepthWater.shader" />
+    <None Include="Assets\MobileDepthWater\Shaders\WaterOpaque\DiffuseWaterOpaque.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/Desktop/Master/TowerMaster/TowerMasterPrototip/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
