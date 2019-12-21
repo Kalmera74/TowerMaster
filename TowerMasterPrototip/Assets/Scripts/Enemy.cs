@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     protected Material _skin;
     [SerializeField]
-    protected ParticleSystem _deathEffect;
+    
     public SkinnedMeshRenderer renderer;
 
 
@@ -59,6 +59,7 @@ public class Enemy : MonoBehaviour
     {
         GameManager.Player.AddGold(_gold);
         // Partical Effect
+        
         Destroy(gameObject);
     }
     public void TakeDamage(int damage, Color damageType)

@@ -61,22 +61,27 @@ public class Shooter : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(0))
+
+        if (Input.GetTouch(0).phase==TouchPhase.Moved)
         {
             LineRender.positionCount = 10;
             Vector3 inputDirection = Vector3.zero * 0.2f;
+
             inputDirection.x = -Input.GetAxisRaw("Mouse Y") * 0.1f;
             inputDirection.z = Input.GetAxisRaw("Mouse X") * 0.1f;
+
             target.transform.localPosition = TargetBufferPos + inputDirection * TargetSens;
             TargetBufferPos = target.transform.localPosition;
             DrawPath();
 
-            if (LastActionPoint != null) {
+            if (LastActionPoint != null)
+            {
                 Destroy(LastActionPoint.gameObject);
                 LastActionPoint = null;
             }
+
         }
-        else if (Input.GetMouseButtonUp(0))
+        else if (Input.GetTouch(0).phase==TouchPhase.Ended)
         {
             SetVisible();
             LastActionPoint = Instantiate(target, boomPosition, target.transform.rotation);

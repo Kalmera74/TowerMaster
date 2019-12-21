@@ -14,7 +14,8 @@ public class Bomb : MonoBehaviour
     private Material _skin;
     [SerializeField]
     private LayerMask _enemyMask;
-    private ParticleSystem _explosionEffect;
+    [SerializeField]
+    private GameObject _explosionEffect;
 
     void Awake()
     {
@@ -28,6 +29,7 @@ public class Bomb : MonoBehaviour
             en.GetComponent<Enemy>().TakeDamage(_damage, _color);
 
         // Partical Effects
+      //  Instantiate(_explosionEffect, transform.position,Quaternion.identity);
 
         Destroy(gameObject);
     }

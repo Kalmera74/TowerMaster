@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     private static int _rand = 0;
     [SerializeField]
     private Item[] _items;
+    public Renderer cannonRenderer;
 
     private static bool next = false;
 
@@ -96,7 +97,7 @@ public class GameManager : MonoBehaviour
 
     private void OnGUI()
     {
-        if (GUI.Button(new Rect(Screen.width - (Screen.width / 2) * 0.32f, 0, 100, 25), "Gold: " + Player.GoldAmount))
+        if (GUI.Button(new Rect(Screen.width - (Screen.width / 2) * 0.32f, 0, 250, 100), "Gold: " + Player.GoldAmount))
         {
             if (Time.timeScale == 0)
             {
@@ -125,7 +126,7 @@ public class GameManager : MonoBehaviour
                 if (GUI.Button(new Rect(i * 160, 0, 150, 150), _items[i].name+"\n"+_items[i]._cost+" GOLD") && Player.GoldAmount >= _items[i]._cost)
                 {
                     Player.SubstructGold(_items[i]._cost);
-                    Player.GetComponent<Renderer>().material.mainTexture = _items[i]._skin;
+                    cannonRenderer.material.mainTexture = _items[i]._skin;
                 }
                    
             }

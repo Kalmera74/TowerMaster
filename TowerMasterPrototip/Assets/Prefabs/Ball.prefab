@@ -68,6 +68,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -121,10 +122,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0166581deb3b2b4bb62c50bc6f49300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blastRadius: 1.2
+  _blastRadius: 1.5
   _color: {r: 0, g: 0, b: 0, a: 0}
   _damage: 5
   _skin: {fileID: 2100000, guid: 0ac774bd5847c9e47b2d53a6153ac9ae, type: 2}
   _enemyMask:
     serializedVersion: 2
     m_Bits: 1024
+  _explosionEffect: {fileID: 7272569763367743193, guid: e66db5e547634ce45b98fb9989f845ce,
+    type: 3}
