@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour
         // Skin = GameManager.GetRandomEnemyColor(0,4);
         // transform.LookAt(GameManager.Player.transform.forward);
         Skin = _skin;
+        transform.Rotate(0, 90, 0);
     }
 
     private void Grow()
@@ -46,7 +47,7 @@ public class Enemy : MonoBehaviour
     protected virtual void Move()
     {
 
-        transform.Translate(Vector3.forward * _moveSpeed * Time.deltaTime);
+        transform.Translate(Vector3.left * _moveSpeed * Time.deltaTime);
     }
 
     private void OnDrawGizmos()

@@ -17,6 +17,7 @@ public class Boss : Enemy
     {
         StartCoroutine(RandMove(10, 3.5f));
         Skin = GameManager.GetRandomEnemyColor(0, 4);
+        transform.Rotate(0, 90, 0);
     }
     private void Update()
     {

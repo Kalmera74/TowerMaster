@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Shooter : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class Shooter : MonoBehaviour
     private int _currentElement = 0;
     private int _maxElement;
 
+    public RawImage NextBomb;
+    public RawImage CurrentBomb;
     
     GameObject[] PathObjects = new GameObject[10]; 
     LaunchData launchData;
@@ -35,7 +38,8 @@ public class Shooter : MonoBehaviour
         Physics.gravity = Vector3.up * gravity;
         TargetStartPos = target.transform.forward + new Vector3(10, -2.8f, 0);
         TargetBufferPos = target.transform.localPosition;
-       
+        CurrentBomb.color = Elements[0].color;
+        NextBomb.color = Elements[1].color;
     }
 
     void SetVisible() {
@@ -88,9 +92,14 @@ public class Shooter : MonoBehaviour
             LastActionPoint.gameObject.AddComponent<ActionPoint>();
             target.transform.position = TargetStartPos;
             TargetBufferPos = TargetStartPos;
-           rg = Instantiate(Projectile, Thrower.transform.position, Quaternion.Euler(Camera.main.transform.rotation.eulerAngles)).GetComponent<Rigidbody>();
+            rg = Instantiate(Projectile, Thrower.transform.position, Quaternion.Euler(Camera.main.transform.rotation.eulerAngles)).GetComponent<Rigidbody>();
             rg.GetComponent<Bomb>().Skin = ChangeColor();
             rg.velocity = launchData.initialVelocity;
+
+            int current = _currentElement < _maxElement ? _currentElement : 0;
+
+            CurrentBomb.color = Elements[current].color;
+            NextBomb.color = Elements[current + 1 < _maxElement ? current + 1 : 0].color;
         }
     }
 

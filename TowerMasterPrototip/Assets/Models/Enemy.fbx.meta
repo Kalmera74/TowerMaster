@@ -1,47 +1,125 @@
 fileFormatVersion: 2
 guid: f3975323ac34d3742bd6e456b1aad8c9
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: Armature
-    100002: Bone
-    100004: Bone.001
-    100006: Bone.002
-    100008: Bone.002_end
-    100010: Bone.003
-    100012: Bone.003_end
-    100014: Bone.004
-    100016: Bone.004_end
-    100018: Bone.005
-    100020: Bone.006
-    100022: Bone.006_end
-    100024: Bone.007
-    100026: Bone.008
-    100028: Bone.008_end
-    100030: Cube
-    100032: //RootNode
-    400000: Armature
-    400002: Bone
-    400004: Bone.001
-    400006: Bone.002
-    400008: Bone.002_end
-    400010: Bone.003
-    400012: Bone.003_end
-    400014: Bone.004
-    400016: Bone.004_end
-    400018: Bone.005
-    400020: Bone.006
-    400022: Bone.006_end
-    400024: Bone.007
-    400026: Bone.008
-    400028: Bone.008_end
-    400030: Cube
-    400032: //RootNode
-    2100000: Material
-    4300000: Cube
-    7400000: Armature|ArmatureAction
-    9500000: //RootNode
-    13700000: Cube
+  serializedVersion: 26
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Armature
+  - first:
+      1: 100002
+    second: Bone
+  - first:
+      1: 100004
+    second: Bone.001
+  - first:
+      1: 100006
+    second: Bone.002
+  - first:
+      1: 100008
+    second: Bone.002_end
+  - first:
+      1: 100010
+    second: Bone.003
+  - first:
+      1: 100012
+    second: Bone.003_end
+  - first:
+      1: 100014
+    second: Bone.004
+  - first:
+      1: 100016
+    second: Bone.004_end
+  - first:
+      1: 100018
+    second: Bone.005
+  - first:
+      1: 100020
+    second: Bone.006
+  - first:
+      1: 100022
+    second: Bone.006_end
+  - first:
+      1: 100024
+    second: Bone.007
+  - first:
+      1: 100026
+    second: Bone.008
+  - first:
+      1: 100028
+    second: Bone.008_end
+  - first:
+      1: 100030
+    second: Cube
+  - first:
+      1: 100032
+    second: //RootNode
+  - first:
+      4: 400000
+    second: Armature
+  - first:
+      4: 400002
+    second: Bone
+  - first:
+      4: 400004
+    second: Bone.001
+  - first:
+      4: 400006
+    second: Bone.002
+  - first:
+      4: 400008
+    second: Bone.002_end
+  - first:
+      4: 400010
+    second: Bone.003
+  - first:
+      4: 400012
+    second: Bone.003_end
+  - first:
+      4: 400014
+    second: Bone.004
+  - first:
+      4: 400016
+    second: Bone.004_end
+  - first:
+      4: 400018
+    second: Bone.005
+  - first:
+      4: 400020
+    second: Bone.006
+  - first:
+      4: 400022
+    second: Bone.006_end
+  - first:
+      4: 400024
+    second: Bone.007
+  - first:
+      4: 400026
+    second: Bone.008
+  - first:
+      4: 400028
+    second: Bone.008_end
+  - first:
+      4: 400030
+    second: Cube
+  - first:
+      4: 400032
+    second: //RootNode
+  - first:
+      21: 2100000
+    second: Material
+  - first:
+      43: 4300000
+    second: Cube
+  - first:
+      74: 7400000
+    second: Armature|ArmatureAction
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: Cube
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -69,7 +147,36 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armature|ArmatureAction
+      takeName: Armature|ArmatureAction
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 39
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -77,6 +184,7 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -84,18 +192,19 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -104,10 +213,11 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -117,6 +227,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

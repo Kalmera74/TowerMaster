@@ -20,9 +20,23 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.TileDragAndDropManager
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
+    UnityEngine.UI.dll:
+    - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.RawImage
     com.unity.multiplayer-hlapi.Runtime.dll:
     - UnityEngine.Networking.NetworkCallbacks
     - UnityEngine.Networking.NetworkIdentity
@@ -52,11 +66,15 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 90
+      Script: {instanceID: 0}
+    - Class: 91
       Script: {instanceID: 0}
     - Class: 95
       Script: {instanceID: 0}
@@ -64,6 +82,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 9738}
     - Class: 114
       Script: {instanceID: 9780}
     - Class: 114
@@ -81,31 +101,39 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9986}
     - Class: 114
-      Script: {instanceID: 10126}
+      Script: {instanceID: 10128}
     - Class: 114
-      Script: {instanceID: 10176}
+      Script: {instanceID: 10178}
     - Class: 114
-      Script: {instanceID: 10212}
+      Script: {instanceID: 10214}
     - Class: 114
-      Script: {instanceID: 10634}
+      Script: {instanceID: 10496}
     - Class: 114
-      Script: {instanceID: 10764}
+      Script: {instanceID: 10636}
     - Class: 114
-      Script: {instanceID: 10864}
+      Script: {instanceID: 10766}
     - Class: 114
-      Script: {instanceID: 10908}
+      Script: {instanceID: 10866}
     - Class: 114
-      Script: {instanceID: 11020}
+      Script: {instanceID: 10910}
     - Class: 114
-      Script: {instanceID: 11034}
+      Script: {instanceID: 10998}
     - Class: 114
-      Script: {instanceID: 11348}
+      Script: {instanceID: 11022}
     - Class: 114
-      Script: {instanceID: 11362}
+      Script: {instanceID: 11036}
     - Class: 114
-      Script: {instanceID: 11462}
+      Script: {instanceID: 11350}
     - Class: 114
-      Script: {instanceID: 11506}
+      Script: {instanceID: 11364}
+    - Class: 114
+      Script: {instanceID: 11464}
+    - Class: 114
+      Script: {instanceID: 11508}
+    - Class: 114
+      Script: {instanceID: 11536}
+    - Class: 114
+      Script: {instanceID: 11988}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -121,6 +149,12 @@ ScriptsOnlyBuild:
     - Class: 198
       Script: {instanceID: 0}
     - Class: 199
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
     - Class: 258
       Script: {instanceID: 0}
@@ -283,6 +317,12 @@ ScriptsOnlyBuild:
     className: GridLayoutGroup
   - hash:
       serializedVersion: 2
+      Hash: 6fe4956411b818396c5717cbd5863886
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LaunchEffect
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -319,7 +359,7 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
-      Hash: bcc0c0904e620f6cdb8a5f64fbbd40b9
+      Hash: b310c23299f2fc67f2550f4565b21712
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Shooter
@@ -727,6 +767,12 @@ ScriptsOnlyBuild:
     className: PlayModeRunnerCallback
   - hash:
       serializedVersion: 2
+      Hash: a08e0a4e048584fc1af351c877f6a8d0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FxSplash
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -803,19 +849,7 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 6fe4956411b818396c5717cbd5863886
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: LaunchEffect
-  - hash:
-      serializedVersion: 2
-      Hash: a08e0a4e048584fc1af351c877f6a8d0
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: FxSplash
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: D:/Desktop/Test.apk
+  playerPath: C:/Users/muham/Desktop/Test.apk
